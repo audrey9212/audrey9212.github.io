@@ -68,7 +68,7 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: #1a252f;
+    background-color: rgba(26, 37, 47, 0.9);
     position: fixed;
     width: 100%;
     left: 0;
@@ -76,6 +76,12 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    background-color: rgba(26, 37, 47, 0.98);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .nav-content {
@@ -84,7 +90,6 @@ body {
     align-items: center;
     padding: 1rem 2rem;
     width: 100%;
-    background-color: #1a252f;
 }
 
 .logo {
@@ -200,6 +205,28 @@ body {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+}
+
+.about-list {
+    list-style: none;
+    margin: 1.5rem auto 0;
+    padding: 0;
+    max-width: 700px;
+    text-align: left;
+}
+
+.about-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.about-list li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 .languages {
@@ -370,6 +397,68 @@ body {
     margin: 1rem 1.5rem 1.5rem;
 }
 
+/* Experience Section */
+.experience {
+    padding: 100px 0;
+    background-color: var(--light-bg);
+}
+
+.experience h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.experience-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.experience-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.experience-role,
+.experience-date,
+.experience-location {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.experience-card ul {
+    list-style: none;
+    margin-top: 1rem;
+    padding-left: 0;
+}
+
+.experience-card ul li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.experience-card ul li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
 /* Education Section */
 .education {
     padding: 100px 0;
@@ -439,6 +528,15 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+}
+
+.resume-summary {
+    text-align: center;
+    max-width: 700px;
+}
+
+.resume-summary p {
+    margin-bottom: 0.75rem;
 }
 
 .resume-actions {
@@ -558,27 +656,26 @@ body {
     gap: 1rem;
 }
 
+.contact-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: var(--secondary-color);
+}
+
 .contact-item i {
     font-size: 1.5rem;
     color: var(--secondary-color);
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.social-link {
+.contact-note {
+    font-size: 1rem;
     color: var(--primary-color);
-    font-size: 1.5rem;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    color: var(--secondary-color);
-    transform: translateY(-2px);
+    margin-top: -1rem;
+    text-align: center;
 }
 
 /* Footer */
