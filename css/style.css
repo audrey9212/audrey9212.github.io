@@ -619,8 +619,11 @@ body {
 
 .award-location, .award-role, .award-date {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--secondary-color);
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .award-details {
